@@ -1,0 +1,29 @@
+{
+  "name": "no-trace",
+  "version": "1.0.0",
+  "description": "no-trace",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkxiansheng/no-trace.git"
+  },
+  "keywords": [
+    "no-trace"
+  ],
+  "author": "mk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkxiansheng/no-trace/issues"
+  },
+  "homepage": "https://github.com/mkxiansheng/no-trace#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "hbs": "^4.0.1"
+  }
+}
