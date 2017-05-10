@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>{{title}}</title>
-</head>
-<body>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-extend.min.css">
+	<link rel="stylesheet" href="/css/site.min.css">
+	<link rel="stylesheet" href="/fonts/material-design/material-design.min.css">
+	<link rel="stylesheet" href="/fonts/font-awesome/font-awesome.min.css">
+
+	<link rel="stylesheet" href="/css/register-v3.min.css">
+	<link rel="stylesheet" href="/css/login-v3.min.css">
 	
-	{{{body}}}
+	<link rel="stylesheet" href="/css/bootstrap-markdown.css">
 
 
+	<link rel="stylesheet" href="/css/no-trace.css">
+</head>
+<body class="{{class}}">
+	
+	{{> nav}}
+
+	<div class="page">
+		<div class="page-content container-fluid">
+			{{{body}}}
+		</div>
+	</div>
+
+
+
+	<script src="/js/common/jquery.js"></script>
+	<script src="/js/common/bootstrap.js"></script>
+	<script src="/js/common/bootstrap-markdown.js"></script>
+	<script src="/js/common/marked.js"></script>
+	<script src="/js/common/to-markdown.js"></script>
 </body>
 </html>

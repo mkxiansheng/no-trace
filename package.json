@@ -7,7 +7,7 @@
     "doc": "doc"
   },
   "scripts": {
-    "test": "test"
+    "dev": "nodemon ./index --config nodemon.json"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/mkxiansheng/no-trace#readme",
   "dependencies": {
     "express": "^4.14.1",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "mongoose": "^4.9.6"
   }
 }
