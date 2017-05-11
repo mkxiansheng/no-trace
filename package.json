@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/mkxiansheng/no-trace#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.14.1",
     "hbs": "^4.0.1",
-    "mongoose": "^4.9.6"
+    "mongoose": "^4.9.6",
+    "nodemon": "^1.11.0"
   }
 }

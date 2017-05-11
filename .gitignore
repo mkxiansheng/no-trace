@@ -1,3 +1,4 @@
 # Created by https://github.com/mkxiansheng/no-trace
 
 node_modules
+*.log
