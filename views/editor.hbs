@@ -1,8 +1,19 @@
 <div class="panel">
 	<div class="panel-heading">
-	  <h3 class="panel-title">Standard Editor</h3>
+	  <h3 class="panel-title">编辑文章</h3>
 	</div>
 	<div class="panel-body">
-		<textarea data-provide="markdown" data-iconlibrary="fa" data-savable="true"></textarea>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<form method="post" autocomplete="off" action="">			
+				<div class="form-group">
+	                <input class="form-control" id="nt-title" name="title" type="text" placeholder="Title?">
+	            </div>
+				<textarea id="nt-markdown" data-provide="markdown" data-iconlibrary="fa" name="content"></textarea>
+				<button type="submit" class="btn btn-primary">发布</button>
+			</form>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="panel" id="nt-markdown-content" style="padding:10px;"></div>
+		</div>
 	</div>
 </div>

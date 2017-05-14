@@ -11,6 +11,7 @@ module.exports = function (app) {
 	app.use('/author',require('./author'));
 	app.use('/details',require('./details'));
 	app.use('/forgot-pwd',require('./forgot-pwd'));
+	app.use('/editor',require('./editor'));
 
 	app.use(function (req, res) {
 		if (!res.headersSent) {

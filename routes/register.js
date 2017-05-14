@@ -17,7 +17,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-	console.log("in post")
 	console.log(req.body.email);
 	console.log(req.body.password);
 	console.log(req.body.PasswordCheck);
