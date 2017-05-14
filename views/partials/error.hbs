@@ -1,0 +1,14 @@
+
+{{#if error}}
+<div class="summary-errors alert alert-danger alert-dismissible" style="display: block;">
+	<button type="button" class="close" aria-label="Close" data-dismiss="alert">
+		<span aria-hidden="true">×</span>
+	</button>
+	<p>Errors list below: </p>
+	<ul>
+		<li data-field="summary_fullName">
+			<a href="javascript: void(0);">{{error}}</a>
+		</li>
+	</ul>
+</div>
+{{/if}}
