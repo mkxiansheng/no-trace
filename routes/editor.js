@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 	res.render('editor',{title:'编辑'})
 });
 
-router.post('', function (req, res) {
+router.post('/', function (req, res) {
 	console.log("in pust");
 	console.log(req.body.title);
 	console.log(req.body.content);
