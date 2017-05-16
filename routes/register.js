@@ -65,16 +65,18 @@ router.post('/', function(req, res, next) {
 		pwd 		: password,		
 	}
 
-	var _cb = usermodel.create(userInfo);
-
-	console.log("_cb");
-	console.log(_cb);
-
-	if (_cb) {
-		req.session.user = userInfo.name;
-		req.flash('success','注册成功');
-		res.redirect('/');
-	}
+	usermodel.create(userInfo).then(function (product) {
+		console.log("product:");
+		console.log(product);
+		if (product) {
+			req.session.user = product;
+			req.flash('success','注册成功');
+			res.redirect('/');
+		}
+	}).catch(function (err) {
+		req.flash('error','注册异常,请重试');
+		res.redirect('/register');
+	});
 	
 });
 
