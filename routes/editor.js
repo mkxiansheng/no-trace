@@ -1,14 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
+var checkLogin = require('../middleware/check').checkLogin;
+
 var postmodel = require("../models/post");
 
-router.get('/', function(req, res, next) {
+router.get('/', checkLogin, function(req, res, next) {
 	console.log(req.session)
 	res.render('editor',{title:'编辑'})
 });
 
-router.post('/', function (req, res) {
+router.post('/', checkLogin, function (req, res) {
 	console.log("in pust");
 	console.log(req.body.title);
 	console.log(req.body.content);
@@ -30,6 +32,27 @@ router.post('/', function (req, res) {
 		req.flash('error',e.message);
 		return res.redirect("/editor");
 	}
+
+	var article = {
+		author 		: req.session.user,
+		title 		: title,
+		content 	: content,
+		data 		: Date.now()
+	}
+
+	postmodel.create(article).then(function (product) {
+		console.log("post product:");
+		console.log(product);
+		if (product) {
+			req.flash('success','发布成功');
+			res.redirect('/');
+		}
+	})
+	.catch(function (err) {
+		req.flash('error','发布失败');
+		res.redirect('back');
+	})
+
 })
 
 module.exports = router;
