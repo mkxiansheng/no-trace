@@ -13,22 +13,11 @@ module.exports = {
 
 	create: function (_post) {
 
-		var cb = true;
-
 		var _p = mongoose.model("post",post);
 
 		var createuser = new _p(_post); 
 
-		createuser.save(function (err) {
-			if (err) {
-				cb = false;
-				console.log("err:"+err);
-			} else {
-				console.log("ok");
-			}
-		})
-
-		return cb;
+		return createuser.save();
 
 	}
 
