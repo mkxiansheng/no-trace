@@ -12,8 +12,7 @@ router.get('/', function(req, res, next) {
 		name:'Full Name',
 		email:'Email',
 		pwd:'Password',
-		repwd:'Re-enter Password',
-		error: req.flash('error')});
+		repwd:'Re-enter Password'});
 });
 
 router.post('/', function(req, res, next) {
@@ -69,7 +68,7 @@ router.post('/', function(req, res, next) {
 		console.log("product:");
 		console.log(product);
 		if (product) {
-			req.session.user = product;
+			req.session.user = product._id;
 			req.flash('success','注册成功');
 			res.redirect('/');
 		}
