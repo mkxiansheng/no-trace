@@ -5,7 +5,7 @@ module.exports = function (app) {
 		res.render('index',{title:'no-trace',pageTitle:'模版名'});
 	})
 
-	app.use('/users', require('./users'));
+	app.use('/signout', require('./signout'));
 	app.use('/register',require('./register'));
 	app.use('/login',require('./login'));
 	app.use('/author',require('./author'));
