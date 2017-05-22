@@ -2,9 +2,10 @@
 module.exports = function (app) {
 	
 	app.get('/', function (req, res) {
-		res.render('index',{title:'no-trace',pageTitle:'模版名'});
+		res.redirect('/index');
 	})
 
+	app.use('/index', require('./posts'));
 	app.use('/signout', require('./signout'));
 	app.use('/register',require('./register'));
 	app.use('/login',require('./login'));

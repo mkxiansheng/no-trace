@@ -15,9 +15,9 @@ module.exports = {
 
 		var _p = mongoose.model("post",post);
 
-		var createuser = new _p(_post); 
+		var createpost = new _p(_post); 
 
-		return createuser.save();
+		return createpost.save();
 
 	}
 
