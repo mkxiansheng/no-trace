@@ -64,7 +64,10 @@ router.post('/', checkNoLogin, function (req, res, nex) {
 			return res.redirect('back');
 		}
 		req.flash('success','登录成功');
-		req.session.user = _id;
+
+		delete product.pwd;
+
+		req.session.user = product;
 		res.redirect('/');
 
 	})

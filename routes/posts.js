@@ -9,14 +9,19 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 
+var marked = require('marked');
+
 var getArticles = require('../models/article');
+
 
 router.get('/', function (req, res, next) {
 
 	getArticles.getArticles().then(function (product) {
-
-		console.log('post product');
-		console.log(product);
+		
+		product.map(function(post){
+			post.content = marked(post.content);
+			return post;
+		})
 
 		res.render('index',{articles:product});
 

@@ -68,7 +68,8 @@ router.post('/', function(req, res, next) {
 		console.log("product:");
 		console.log(product);
 		if (product) {
-			req.session.user = product._id;
+			delete product.pwd;
+			req.session.user = product;
 			req.flash('success','注册成功');
 			res.redirect('/');
 		}
