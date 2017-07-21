@@ -2,7 +2,18 @@
   "env": {
     "browser": true
   },
+  "parserOptions": {
+   "ecmaVersion": 6
+  },
   "rules": {
+  	  "browser": "warn",
+  	  "node": "warn",
+  	  "es6": "warn",
+  	  "mocha": "warn",
+  	  "jasmine": "warn",
+  	  "jquery": "warn",
+  	  "mongo": "warn",
+
 	  "no-cond-assign": "warn",
 	  "no-constant-condition": "warn",
 	  "no-debugger": "warn",

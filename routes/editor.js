@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var checkLogin = require('../middleware/check').checkLogin;
+const checkLogin = require('../middleware/check').checkLogin;
 
-var postmodel = require("../models/post");
+const postmodel = require("../models/post");
 
 router.get('/', checkLogin, function(req, res, next) {
 	console.log(req.session)
@@ -15,8 +15,8 @@ router.post('/', checkLogin, function (req, res) {
 	console.log(req.body.title);
 	console.log(req.body.content);
 
-	var title = req.body.title;
-	var content = req.body.content;
+	let title = req.body.title;
+	let content = req.body.content;
 
 	try {
 	    if (!title.length) {
@@ -33,7 +33,7 @@ router.post('/', checkLogin, function (req, res) {
 		return res.redirect("/editor");
 	}
 
-	var article = {
+	let article = {
 		author 		: req.session.user,
 		title 		: title,
 		content 	: content,

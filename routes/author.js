@@ -1,13 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var marked = require('marked');
+const marked = require('marked');
 
-var getMsg = require('../models/author.js');
+const getMsg = require('../models/author.js');
 
 router.get('/:authorId', function(req, res) {
 
-	var _uid = req.params.authorId;
+	let _uid = req.params.authorId;
 
 	getMsg.getAuthor(_uid).then(function (product) {
 

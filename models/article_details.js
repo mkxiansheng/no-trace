@@ -5,18 +5,18 @@
  * @version 1.0.0
  */
 
-var post = require("../lib/mongo").post;
-var user = require("../lib/mongo").user;
-var mongoose = require("mongoose");
+const post = require("../lib/mongo").post;
+const user = require("../lib/mongo").user;
+const mongoose = require("mongoose");
 
 module.exports = {
 
 	//获取文章列表
 	getArticle: function (id) {
 
-		var _article = mongoose.model("post",post);
+		let _article = mongoose.model("post",post);
 
-		var _user = mongoose.model("create",user);
+		let _user = mongoose.model("create",user);
 
 		return _article
 					.find({_id: id})

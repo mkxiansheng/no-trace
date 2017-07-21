@@ -1,8 +1,8 @@
-var express = require('express');
-var app = express();
-var router = express.Router();
+const express = require('express');
+const app = express();
+const router = express.Router();
 
-var usermodel = require("../models/user");
+const usermodel = require("../models/user");
 
 router.get('/', function(req, res, next) {
 
@@ -20,14 +20,14 @@ router.post('/', function(req, res, next) {
 	console.log(req.body.password);
 	console.log(req.body.PasswordCheck);
 
-	var email = req.body.email;
-	var password = req.body.password;
-	var passwordCheck = req.body.PasswordCheck;
+	let email = req.body.email;
+	let password = req.body.password;
+	let passwordCheck = req.body.PasswordCheck;
 
 	//校验参数
 	try {
 		if (email) {
-			var reg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+			let reg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 			if (!reg.test(email)) {
 				console.log("邮箱格式不对")
 				throw new Error("邮箱格式不对");
@@ -38,7 +38,7 @@ router.post('/', function(req, res, next) {
 		if (password) {
 			if (password === passwordCheck) {
 				console.log("in");
-				var reg = /^\w+$/;
+				let reg = /^\w+$/;
 				if (!reg.test(password)) {
 					console.log("密码包含非法字符")
 					throw new Error("密码包含非法字符");
@@ -59,7 +59,7 @@ router.post('/', function(req, res, next) {
 		return res.redirect('/register');
 	}
 
-	var userInfo = {
+	let userInfo = {
 		name 		: email,
 		pwd 		: password,		
 	}

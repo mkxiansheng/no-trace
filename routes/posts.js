@@ -5,13 +5,13 @@
  * @version 1.0.0
  */
 
-var express = require('express');
-var app = express();
-var router = express.Router();
+const express = require('express');
+const app = express();
+const router = express.Router();
 
-var marked = require('marked');
+const marked = require('marked');
 
-var getArticles = require('../models/article');
+const getArticles = require('../models/article');
 
 
 router.get('/', function (req, res, next) {

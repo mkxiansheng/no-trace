@@ -5,10 +5,10 @@
  * @version 1.0.0
  */
 
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var checkLogin = require('../middleware/check').checkLogin;
+const checkLogin = require('../middleware/check').checkLogin;
 
 // 登出 
 router.get('/', checkLogin, function (req, res, next) {

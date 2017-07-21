@@ -1,21 +1,23 @@
-var express = require('express');
+"use strict";
 
-var bodyParser = require('body-parser');
+const express = require('express');
 
-var hbs = require('hbs');
+const bodyParser = require('body-parser');
 
-var flash = require('connect-flash');
+const hbs = require('hbs');
+
+const flash = require('connect-flash');
 
 // var config = require('config-lite');
 
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
-var routers = require('./routes');
+const routers = require('./routes');
 
-var config = require('./config/default');
+const config = require('./config/default');
 
-var app = express();
+const app = express();
 
 app.use(bodyParser.json());
 

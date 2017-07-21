@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var getUserModel = require('../models/login');
+const getUserModel = require('../models/login');
 
-var checkNoLogin = require('../middleware/check').checkNoLogin;
+const checkNoLogin = require('../middleware/check').checkNoLogin;
 
 router.get('/', checkNoLogin, function(req, res) {
   res.render('login',{title:'登录',
@@ -18,13 +18,13 @@ router.post('/', checkNoLogin, function (req, res, nex) {
 	console.log(req.body.email);
 	console.log(req.body.password);
 
-	var email = req.body.email;
-	var password = req.body.password;
+	let email = req.body.email;
+	let password = req.body.password;
 
 	//检验参数
 	try {
 		if (email) {
-			var reg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+			let reg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 			if (!reg.test(email)) {
 				console.log("邮箱格式不对")
 				throw new Error("邮箱格式不对");
@@ -34,7 +34,7 @@ router.post('/', checkNoLogin, function (req, res, nex) {
 		}
 
 		if (password.length >= 6) {
-			var reg = /^\w+$/;
+			let reg = /^\w+$/;
 			if (!reg.test(password)) {
 				console.log("密码包含非法字符")
 				throw new Error("密码包含非法字符");
@@ -53,8 +53,8 @@ router.post('/', checkNoLogin, function (req, res, nex) {
 	getUserModel.getUser(email).then(function (product) {
 		console.log("product:");
 		console.log(product);
-		var _pwd = product.pwd;
-		var _id = product._id;
+		let _pwd = product.pwd;
+		let _id = product._id;
 		if (!product) {
 			req.flash('error','用户不存在');
 			return res.redirect('back');

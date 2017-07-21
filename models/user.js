@@ -1,5 +1,5 @@
-var user = require("../lib/mongo").user;
-var mongoose = require("mongoose");
+const user = require("../lib/mongo").user;
+const mongoose = require("mongoose");
 
 // var usertest = {
 // 	_id 		: 1,
@@ -13,9 +13,9 @@ module.exports = {
 
 	create: function (users) {
 
-		var _user = mongoose.model("create",user);
+		let _user = mongoose.model("create",user);
 
-		var createuser = new _user(users); 
+		let createuser = new _user(users); 
 
 		return createuser.save();
 

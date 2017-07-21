@@ -1,5 +1,5 @@
-var post = require("../lib/mongo").post;
-var mongoose = require("mongoose");
+const post = require("../lib/mongo").post;
+const mongoose = require("mongoose");
 
 // var posttest = {
 	// author 		: ObjectId,
@@ -13,9 +13,9 @@ module.exports = {
 
 	create: function (_post) {
 
-		var _p = mongoose.model("post",post);
+		let _p = mongoose.model("post",post);
 
-		var createpost = new _p(_post); 
+		let createpost = new _p(_post); 
 
 		return createpost.save();
 
