@@ -1,3 +1,17 @@
 body {
 	padding-top: 0;
 }
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.navbar-brand>.navbar-brand-logo {
+	background-color: #fff;
+}
+
+.add {
+	margin-left: 15px;
+    float: right;
+    display: inline;
+}
