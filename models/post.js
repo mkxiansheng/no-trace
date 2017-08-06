@@ -1,3 +1,5 @@
+"use strict";
+
 const post = require("../lib/mongo").post;
 const mongoose = require("mongoose");
 

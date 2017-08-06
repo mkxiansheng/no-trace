@@ -5,6 +5,8 @@
  * @version 1.0.0
  */
 
+"use strict";
+
 const express = require('express');
 const router = express.Router();
 

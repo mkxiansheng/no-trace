@@ -5,6 +5,8 @@
  * @version 1.0.0
  */
 
+"use strict";
+
 module.exports = {
 	checkLogin: function (req, res, next) {
 		if (!req.session.user) {
