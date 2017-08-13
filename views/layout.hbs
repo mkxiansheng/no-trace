@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 	<title>{{title}}</title>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,11 +15,7 @@
 	<link rel="stylesheet" href="/fonts/material-design/material-design.min.css">
 	<link rel="stylesheet" href="/fonts/font-awesome/font-awesome.min.css">
 
-	<link rel="stylesheet" href="/css/register-v3.min.css">
-	<link rel="stylesheet" href="/css/login-v3.min.css">
-	
-	<link rel="stylesheet" href="/css/bootstrap-markdown.css">
-
+	{{{block "link"}}}
 
 	<link rel="stylesheet" href="/css/no-trace.css">
 </head>
@@ -30,19 +25,13 @@
 
 	<div class="page">
 		<div class="page-content container-fluid">
-			{{> error}}		
-			{{{body}}}
+			{{{block "main"}}}
 		</div>
 	</div>
 
-
-
 	<script src="/js/common/jquery.js"></script>
 	<script src="/js/common/bootstrap.js"></script>
-	<script src="/js/common/bootstrap-markdown.js"></script>
-	<script src="/js/common/marked.js"></script>
-	<script src="/js/common/to-markdown.js"></script>
 
-	<script src="/js/pages/nt-markdown.js"></script>
+	{{{block "script"}}}
 </body>
 </html>

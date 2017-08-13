@@ -1,3 +1,8 @@
+{{#extend "link"}}
+<link rel="stylesheet" href="/css/bootstrap-markdown.css">
+{{/extend}}
+
+{{#extend "main"}}
 <div class="panel">
 	<div class="panel-heading">
 	  <h3 class="panel-title">编辑文章</h3>
@@ -17,3 +22,12 @@
 		</div>
 	</div>
 </div>
+{{/extend}}
+
+{{#extend "script"}}
+<script src="/js/common/bootstrap-markdown.js"></script>
+<script src="/js/common/marked.js"></script>
+<script src="/js/common/to-markdown.js"></script>
+
+<script src="/js/pages/nt-markdown.js"></script>
+{{/extend}}

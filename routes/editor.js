@@ -6,7 +6,6 @@ const checkLogin = require('../middleware/check').checkLogin;
 const postmodel = require("../models/post");
 
 router.get('/', checkLogin, function(req, res, next) {
-	console.log(req.session)
 	res.render('editor',{title:'编辑'})
 });
 
