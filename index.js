@@ -8,6 +8,8 @@ const hbs = require('hbs');
 
 const flash = require('connect-flash');
 
+const favicon = require('serve-favicon');
+
 // var config = require('config-lite');
 
 const session = require('express-session');
@@ -18,6 +20,9 @@ const routers = require('./routes');
 const config = require('./config/default');
 
 const app = express();
+
+//favicon.ico
+app.use(favicon(__dirname+'/favicon.ico'));
 
 app.use(bodyParser.json());
 

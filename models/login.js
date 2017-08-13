@@ -5,6 +5,8 @@
  * @version 1.0.0
  */
 
+"use strict";
+
 const user = require('../lib/mongo').user;
 const mongoose = require('mongoose');
 
