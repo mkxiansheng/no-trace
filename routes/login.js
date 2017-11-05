@@ -48,7 +48,6 @@ router.post('/', checkNoLogin, function (req, res, nex) {
 
 	} catch (e) {
 		console.log(e.message);
-		req.flash('error',e.message);
 		return res.redirect('/login');
 	}
 
@@ -58,14 +57,11 @@ router.post('/', checkNoLogin, function (req, res, nex) {
 		let _pwd = product.pwd;
 		let _id = product._id;
 		if (!product) {
-			req.flash('error','用户不存在');
 			return res.redirect('back');
 		}
 		if (password!==_pwd) {
-			req.flash('error','用户或密码错误');
 			return res.redirect('back');
 		}
-		req.flash('success','登录成功');
 
 		delete product.pwd;
 
@@ -75,7 +71,6 @@ router.post('/', checkNoLogin, function (req, res, nex) {
 	})
 	.catch(function (err) {
 		console.log(err);
-		req.flash('error','登录异常');
 		res.redirect('/login');
 	})
 

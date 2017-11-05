@@ -6,11 +6,7 @@ const bodyParser = require('body-parser');
 
 const hbs = require('hbs');
 
-const flash = require('connect-flash');
-
 const favicon = require('serve-favicon');
-
-// var config = require('config-lite');
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
@@ -41,13 +37,10 @@ app.use(session({
   })
 }));
 
-app.use(flash());
 
 // 添加模板必需的三个变量
 app.use(function (req, res, next) {
   res.locals.user = req.session.user;
-  res.locals.success = req.flash('success').toString();
-  res.locals.error = req.flash('error').toString();
   next();
 });
 

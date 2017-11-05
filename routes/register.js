@@ -57,7 +57,7 @@ router.post('/', function(req, res, next) {
 
 	}catch (e) {
 		console.log(e.message);
-		req.flash('error', e.message);
+		// req.flash('error', e.message);
 		return res.redirect('/register');
 	}
 
@@ -72,11 +72,9 @@ router.post('/', function(req, res, next) {
 		if (product) {
 			delete product.pwd;
 			req.session.user = product;
-			req.flash('success','注册成功');
 			res.redirect('/');
 		}
 	}).catch(function (err) {
-		req.flash('error','注册异常,请重试');
 		res.redirect('/register');
 	});
 	

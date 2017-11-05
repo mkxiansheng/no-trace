@@ -15,6 +15,14 @@ module.exports = function (app) {
 	app.use('/forgot-pwd',require('./forgot-pwd'));
 	app.use('/editor',require('./editor'));
 
+	// API
+	app.use('/api/login', require('./api-login.js'));
+	app.use('/api/signout', require('./api-signout.js'));
+	app.use('/api/register', require('./api-register.js'));
+	
+	app.use('/api/posts', require('./api-posts.js'));
+
+
 	app.use(function (req, res) {
 		if (!res.headersSent) {
 			res.render('404');

@@ -30,7 +30,6 @@ router.post('/', checkLogin, function (req, res) {
 		}
 	} catch (e) {
 		console.log(e.message);
-		req.flash('error',e.message);
 		return res.redirect("/editor");
 	}
 
@@ -45,12 +44,10 @@ router.post('/', checkLogin, function (req, res) {
 		console.log("post product:");
 		console.log(product);
 		if (product) {
-			req.flash('success','发布成功');
 			res.redirect('/');
 		}
 	})
 	.catch(function (err) {
-		req.flash('error','发布失败');
 		res.redirect('back');
 	})
 
